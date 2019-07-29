@@ -10,13 +10,16 @@
 		.search-box {
 			position: fixed;
 			top: 1rem;
-			left: 1rem;
+			right: 1rem;
 			padding: .5rem;
 			background: #ddd;
 			opacity: .8;
 		}
 		.search-result {
 			color: red;
+		}
+		.search-mark {
+			background: yellow;
 		}
 		#textvalue {
 			margin-top: 4rem;
@@ -26,14 +29,19 @@
 
 <body>
 	<div class="search-box">
-		<input type="text" id="searchvalue" />
+		<input type="text" id="searchvalue" autofocus />
 		<input type="button" onclick="search()" value="搜索" />
 		<input type="button" value="上一个" onclick="preOne()" />
 		<input type="button" value="下一个" onclick="nextOne()" />
+		第
+		<span id="result-num"></span>
+		/
+		<span id="result-length"></span>
+		个
 	</div>
 	<div cols="100" rows="10" id="textvalue">安全生产技术试题
-		<p id="1">1.设备使用安全管理制度不包括:</p>
-			A.岗位责任制 B.操作证制度 C.安全检查、检验制度 D.生产许可证制度答案: D
+		<p>1.设备使用安全管理制度不包括:</p>
+		A.岗位责任制 B.操作证制度 C.安全检查、检验制度 D.生产许可证制度答案: D
 			<p id="2">2.设备使用安全管理制度不包括:</p>
 			A.维修保养制度 B.设计资格证制度 C.设备使用守则 D.交接班制度答案: B
 			<p id="3">3.工人的培训教育一般分为_____三级。</p>
@@ -194,41 +202,69 @@
 	</div>
 
 	<script>
-		// String.prototype.replaceAll = function (s1, s2) {
-		// 	return this.replace(new RegExp(s1, "gm"), s2);
-		// }
-		var resultNum = 0;
+		var searchResults = null;  // 搜索结果，数组
+		var resultNum = 0;  // 锚点定位
+		var resultLength = 0;  // 搜索结果总数
+		var tagResultNum = document.getElementById('result-num');
+		var tagResultLength = document.getElementById('result-length');
+		var contentBackup = document.getElementById('textvalue').innerHTML;
 
+		location.hash = '';  // 更新锚点
+		// 搜索函数
 		function search() {
+			// 初始化搜索
+			document.getElementById('textvalue').innerHTML = contentBackup;
 			var searchtext = document.getElementById("searchvalue").value;
 			var textvalue = document.getElementById("textvalue").innerHTML;
-
+			resultNum = 0;
+			resultLength = 0;
+			
+			// 输入字符过滤，转义
+			searchtext = searchtext.replace(/[\~\`\!\@\#\$\%\^\&\*\(\)\_\-\=\+\[\]\{\}\|\\\;\:\'\"\,\<\.\>\/\?]/gm, '');
 			if (searchtext.length == 0) {
 				return;
 			}
-			// document.getElementById("textvalue").innerHTML = textvalue.replaceAll(searchtext, 
-			// 	"<font color='red' " + 'id="result' + ++resultCount + '">' +
-			// 	searchtext + "</font>");
+
 			document.getElementById('textvalue').innerHTML = textvalue.replace(new RegExp(searchtext, 'gm'),
 				'<span class="search-result">' + searchtext + '</span>');
-			var searchResults = document.getElementsByClassName('search-result');
-			
-			for (var i = 0; i < searchResults.length; i++) {
+			searchResults = document.getElementsByClassName('search-result');
+
+			resultLength = searchResults.length;
+			for (var i = 0; i < resultLength; i++) {
 				searchResults[i].id = 'search-result-' + i;
 			}
 			locateResult(resultNum);
+			// clearResult(searchResults);
 		}
-
+		// 定位结果锚点
 		function locateResult(n) {
 			location.hash = '#search-result-' + n;
+			if (n > 0) {
+				document.getElementById('search-result-' + (n - 1)).classList.remove('search-mark');
+			}
+			if (n < resultLength - 1) {
+				document.getElementById('search-result-' + (n + 1)).classList.remove('search-mark');
+			}
+			// 锚点高亮
+			document.querySelector(location.hash).classList.add('search-mark');
+			// 更新数字显示
+			tagResultNum.innerHTML = resultNum + 1,
+			tagResultLength.innerHTML = resultLength;
 		}
-
+		// 上一个结果
 		function preOne() {
 			locateResult(resultNum > 0 ? --resultNum : resultNum);
 		}
-
+		// 下一个结果
 		function nextOne() {
-			locateResult(++resultNum);
+			locateResult(resultNum < resultLength - 1 ? ++resultNum : resultNum);
+		}
+		// 清空搜索记录
+		function clearResult(_searchResults) {
+			_searchResults = document.getElementsByClassName('search-result');
+			for (var i = 0; i < searchResults.length; i++) {
+				_searchResults[i].classList.remove('search-result');
+			}
 		}
 	</script>
 
