@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
@@ -57,7 +57,7 @@
 				 A.噪声检测 B.渗透检测 C.火灾的探测 D.电气设备的电气参数检测答案: B
 			<p id="24">24.专项检查中的精密检查,是对设备的几何精度和加工精度有计划地定期进行检测,精度检查的目的是为____提供依据。</p>
 			 A.设备的调整和报废更新 B.设备的调整和修理 C.设备的调整、修理和验收 D.设备的调整、修理、验收和报废更新答案: D
-		</div>
+
 
 		<script>
 			function search() {
@@ -75,6 +75,3 @@
 			}
 		</script>
 
-	</body>
-
-</html>
