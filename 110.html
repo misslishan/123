@@ -1,0 +1,262 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>无标题文档</title>
+	<style>
+		.search-box {
+			position: fixed;
+			top: 1rem;
+			right: 1rem;
+			padding: .5rem;
+			background: #ddd;
+			opacity: .8;
+		}
+		.search-result {
+			color: red;
+		}
+		.search-mark {
+			background: yellow;
+		}
+		#textvalue {
+			margin-top: 4rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="search-box">
+		<input type="text" id="searchvalue" autofocus />
+		<input type="button" onclick="search()" value="搜索" />
+		<input type="button" value="上一个" onclick="preOne()" />
+		<input type="button" value="下一个" onclick="nextOne()" />
+		第
+		<span id="result-num"></span>
+		/
+		<span id="result-length"></span>
+		个
+	</div>
+	<div cols="100" rows="10" id="textvalue">高处吊篮吊具题库
+		
+<p id="100">单人吊具</p>
+<p id="1">1.(多选题）在播放的单人吊具设备动画中，请选择所包含的安全隐患（ABCD）
+
+A.悬吊单人吊具的工作绳存在断股、绳股松散
+
+B.空中的安全绳存在接头
+
+C.安全带挂在安全绳上的自锁器毁坏
+
+D.坐在单人吊具里的清洗作业的工人未戴安全帽</p>
+
+<p id="2">2.(多选题）您刚才看到的某工人在操作单人吊具动画，下列说法正确的是（ABC）。
+
+A.工作绳和安全绳在建筑物的凸缘或者转角处应垫有防止绳索 损伤的衬垫或采用马架
+ 
+B.该工人操作顺序错误，应该先系好安全带，然后把自锁器安 装在安全绳上，扣好保险，最后上座板装置
+
+C.悬吊作业时作业人员间不能传递工具或物品
+
+D.吊具未平衡可以直接进行清洗工作</p>
+
+<p id="3">3.安全锁的功能是为了（D）的安全保护装置。
+
+A.限制工作钢丝绳载荷的一种自动
+
+B.防止升降平台超越预定的行程范围
+
+C.防止吊篮下降过程遇到意外阻力时使工作钢丝绳松弛而发生意外事故
+
+D.防止吊篮平台遇意外事故而超速下降或坠落</p>
+
+<p id="4">4.在使用座式登高板作业时，应先（A）。
+
+A.连接自锁器，再坐进座板，并坚持自锁器高挂、座板低用的原则
+
+B.坐进座板，再连接自锁器，并坚持自锁器高挂、座板低用的原则
+
+C.连接自锁器，再坐进座板，并坚持自锁器低挂、座板低用的原则
+
+D.坐进座板，再连接自锁器，并坚持自锁器低挂、座板低用的原则</p>
+
+
+<p id="5">5.座式登高板的自锁器当工作绳断裂、座板坠落时能立即卡住（B）
+
+A.安全带
+
+B.安全绳
+
+C.工作绳
+
+D.座板</p>
+
+<p id="6">6.安全带是进行高处作业人员预防坠落伤亡的个体防护用品，安全带的正确使用方法是（B）
+
+A.低挂高用
+
+B.高挂低用
+
+C.水平挂用
+
+D.挂设位置与腰部平齐</p>
+
+<p id="7">7.使用吊板前，必须选择安全可靠的固定点，将工作绳系好，并且由施工负责人验收，符合要求后，方可使用。操作时，固定点处必须设专人紧握（B）负责看护。
+
+A.安全绳
+
+B.工作绳
+
+C.安全带
+
+D.固定物体</p>
+<p id="8">吊篮登高清洗作业考试</p>
+
+<p id="9">1.(多选题）在播放的吊篮设备动画中，请选择所包含的安全隐患（ABCD）
+
+
+A.在楼顶的悬挂机构中缺少配重器
+B.空中的吊篮绳和安全绳存在断股
+C.地面上的吊篮左右两方没有安全锁
+D.吊篮里的工人未戴安全帽</p>
+
+<p id="10">2.(多选题）您刚才看到的某工人在操作吊篮动画，下列说法正确的是（BCD）
+
+
+ A.该工人未设置安全警戒区
+
+ B.该工人未进行空载试验就进入吊篮
+
+ C.该工人未穿安全带就进入吊篮工作
+
+ D.该工人未调节吊篮平衡就开始清洗工作</p>
+
+
+<p id="11">3.(多选题）通过视频中某工人操作吊篮，下列说法不正确的是（CD）
+
+
+ A.该工人未设置安全警戒区
+
+ B.该工人没有把安全带挂到安全绳上的自锁器上
+
+ C.在有大风的情况下，工人也可以进行清洗作业
+
+ D.该工人到达一定楼层忘记带清洗工具，高空中 的其他吊篮工人可以传递给他清洗工具</p>
+
+
+<p id="12">4.哪个不属于空载运行试验应注意的问题（C）
+
+ A.操作按钮动作灵敏、正常,上、限位有效
+
+ B.提升机起动、制动正常，运行平稳
+
+ C.配重符合要求，无失缺，有固定措施
+
+ D.整机无异响及其它异常情况</p>
+
+<p id="13">5.安全锁的功能（A）
+
+ A.发生意外情况时，安全锁能迅速将超速下滑、倾斜的悬吊平台锁定在安全钢丝绳上
+
+ B.当悬吊平台到达预设极限位置时使之停止运行
+
+ C.发生意外情况时，安全锁能迅速将超速下滑、倾斜的悬吊平台锁定在钢丝绳上
+
+ D.使悬吊平台停止运行</p>
+
+<p id="14">6.(多选题）吊篮在作业时遇到停电应（ABCD）
+
+ A.切断吊篮电源总开关
+
+ B.与地面有关人员联络，判明情况
+
+ C.若短时间停电，应耐心等待，来电后经查无误，可通电运行
+
+ D.长时间停电或因本设备故障原因，应采取手动滑降方式降至地面</p>
+
+<p id="15">7.(多选题）空载运行试验应注意（ABCD）
+
+ A.操作按钮动作灵敏、正常,上限位有效
+
+ B.提升机起动、制动正常，运行平稳
+
+ C.安全锁手动锁绳正常
+
+ D.整机无异响及其它异常情况</p>
+
+
+
+	</div>
+
+	<script>
+		var searchResults = null;  // 搜索结果，数组
+		var resultNum = 0;  // 锚点定位
+		var resultLength = 0;  // 搜索结果总数
+		var tagResultNum = document.getElementById('result-num');
+		var tagResultLength = document.getElementById('result-length');
+		var contentBackup = document.getElementById('textvalue').innerHTML;
+
+		location.hash = '';  // 更新锚点
+		// 搜索函数
+		function search() {
+			// 初始化搜索
+			document.getElementById('textvalue').innerHTML = contentBackup;
+			var searchtext = document.getElementById("searchvalue").value;
+			var textvalue = document.getElementById("textvalue").innerHTML;
+			resultNum = 0;
+			resultLength = 0;
+			
+			// 输入字符过滤，转义
+			searchtext = searchtext.replace(/[\~\`\!\@\#\$\%\^\&\*\(\)\_\-\=\+\[\]\{\}\|\\\;\:\'\"\,\<\.\>\/\?]/gm, '');
+			if (searchtext.length == 0) {
+				return;
+			}
+
+			document.getElementById('textvalue').innerHTML = textvalue.replace(new RegExp(searchtext, 'gm'),
+				'<span class="search-result">' + searchtext + '</span>');
+			searchResults = document.getElementsByClassName('search-result');
+
+			resultLength = searchResults.length;
+			for (var i = 0; i < resultLength; i++) {
+				searchResults[i].id = 'search-result-' + i;
+			}
+			locateResult(resultNum);
+			// clearResult(searchResults);
+		}
+		// 定位结果锚点
+		function locateResult(n) {
+			location.hash = '#search-result-' + n;
+			if (n > 0) {
+				document.getElementById('search-result-' + (n - 1)).classList.remove('search-mark');
+			}
+			if (n < resultLength - 1) {
+				document.getElementById('search-result-' + (n + 1)).classList.remove('search-mark');
+			}
+			// 锚点高亮
+			document.querySelector(location.hash).classList.add('search-mark');
+			// 更新数字显示
+			tagResultNum.innerHTML = resultNum + 1,
+			tagResultLength.innerHTML = resultLength;
+		}
+		// 上一个结果
+		function preOne() {
+			locateResult(resultNum > 0 ? --resultNum : resultNum);
+		}
+		// 下一个结果
+		function nextOne() {
+			locateResult(resultNum < resultLength - 1 ? ++resultNum : resultNum);
+		}
+		// 清空搜索记录
+		function clearResult(_searchResults) {
+			_searchResults = document.getElementsByClassName('search-result');
+			for (var i = 0; i < searchResults.length; i++) {
+				_searchResults[i].classList.remove('search-result');
+			}
+		}
+	</script>
+
+</body>
+
+</html>
